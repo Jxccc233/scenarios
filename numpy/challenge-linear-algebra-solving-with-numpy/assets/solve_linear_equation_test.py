@@ -8,7 +8,7 @@ import numpy as np
 from solve_linear_equation import solve_linear_equation
 
 class TestMatrixInversion(unittest.TestCase):
-  def test_solve_linear_equation(self):
+    def test_solve_linear_equation(self):
         A = np.array([[1, 2], [3, 4]])
         b = np.array([5, 6])
         self.assertTrue(np.allclose(solve_linear_equation(A, b), np.array([-4., 4.5])))
