@@ -13,11 +13,12 @@ class TestMatrixInversion(unittest.TestCase):
         B = np.array([[1, 0, 0], [0, 2, 0], [0, 0, 3]])
         C = np.array([[1, 2], [3, 4]])
         D = np.array([[1, 2, 3], [4, 5, 6]])
-        self.assertTrue(np.allclose(invert_matrix(A), np.array([[-0.5, 1., -0.5], [1., -2., 1.], [-0.5, 1., -0.5]])))
+        with self.assertRaises(ValueError):
+            invert_matrix(A)
         self.assertTrue(np.allclose(invert_matrix(B), np.array([[1., 0., 0.], [0., 0.5, 0.], [0., 0., 0.33333333]])))
         self.assertTrue(np.allclose(invert_matrix(C), np.array([[-2., 1.], [1.5, -0.5]])))
         with self.assertRaises(ValueError):
             invert_matrix(D)
-            
+
 if __name__ == '__main__':
     unittest.main()
