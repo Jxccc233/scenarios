@@ -1,4 +1,5 @@
 import numpy as np
+from invert_matrix import invert_matrix
 
 def solve_linear_equation(A: np.ndarray, b: np.ndarray) -> np.ndarray:
     """
