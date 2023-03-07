@@ -8,7 +8,7 @@ import numpy as np
 from determinant_matrix import determinant_matrix
 
 class TestMatrixInversion(unittest.TestCase):
-def test_determinant_matrix(self):
+    def test_determinant_matrix(self):
         A = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
         B = np.array([[1, 2], [3, 4]])
         self.assertEqual(determinant_matrix(A), -0.0)
