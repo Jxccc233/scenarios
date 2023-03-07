@@ -15,7 +15,10 @@ def invert_matrix(matrix: np.ndarray) -> np.ndarray:
     Raises:
         ValueError: If the input matrix is not invertible.
     """
-    det = np.linalg.det(matrix)
-    if det == 0:
-        raise ValueError("Matrix is not invertible")
-    return np.linalg.inv(matrix)
+    try:
+        det = np.linalg.det(matrix)
+        if det == 0:
+            raise ValueError("Matrix is not invertible")
+        return np.linalg.inv(matrix)
+    except np.linalg.LinAlgError as e:
+        raise ValueError("Matrix is not invertible: {}".format(e))
