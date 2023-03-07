@@ -11,4 +11,4 @@ def determinant_matrix(matrix: np.ndarray) -> float:
     Returns:
         The determinant of the input matrix as a float.
     """
-    return np.linalg.det(matrix)
+    return round(np.linalg.det(matrix), 1)
